@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-
+const imageUrl = "https://dummyjson.com/image/i/products/1/1.jpg";
 
 function App() {
 
@@ -11,6 +11,20 @@ function App() {
     textAlign: "center",
     paddingTop: "50px",
 }
+
+  const [img, setImg] = useState();
+
+  const fetchImage = async () => {
+    const res = await fetch(imageUrl);
+    const imageBlob = await res.blob();
+    const imageObjectURL = URL.createObjectURL(imageBlob);
+    setImg(imageObjectURL);
+  };
+
+  useEffect(() => {
+    fetchImage();
+  }, []);
+
 
   const url = 'https://dummyjson.com/products/1';
   const [data , setData] = useState({})
@@ -34,7 +48,10 @@ useEffect(()=>{
         <p style={styleObj}>title : {data.title}</p>
         <p style={styleObj}>description : {data.description}</p>
         <p style={styleObj}>category : {data.category}</p>
-        {/* <p>images : {data.images[0]}</p> */}
+        <>
+         <img src={img} alt="icons" />
+        </>
+    
       </div>
     </div>
   );
