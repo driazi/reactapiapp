@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-const imageUrl = "https://dummyjson.com/image/i/products/1/1.jpg";
+
 
 function App() {
 
@@ -9,9 +9,10 @@ function App() {
     fontWeight: 'bold',
     color: "#4a54f1",
     textAlign: "center",
-    paddingTop: "50px",
+    paddingTop: "20px",
 }
 
+  const imageUrl = "https://dummyjson.com/image/i/products/1/1.jpg";
   const [img, setImg] = useState();
 
   const fetchImage = async () => {
