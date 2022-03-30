@@ -60,15 +60,16 @@ useEffect(()=>{
   return (
       <div className="App">
         <div>
+          <>
+           <img src={img} alt="icons" />
+          </>
           <p style={styleObj}>id : {data.id}</p>
           <p style={styleObj}>title : {data.title}</p>
           <p style={styleObj}>description : {data.description}</p>
           <p style={styleObj}>category : {data.category}</p>
           <p style={styleObj}>brand : {data.brand}</p>
           <p style={styleObj}>price : {data.price}</p>
-          <>
-          <img src={img} alt="icons" />
-          </>
+         
           </div>
       </div>
   );
